@@ -37,39 +37,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="container d-flex align-items-center">
 			<div class="form-holder ">
 				<div class="row">
-				<div class="col-lg-6">
-						<div class="info d-flex align-items-center">
-							<div class="content">
-								<div class="logo">
-									<h1>ONE MALL</h1>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 bg-white " >
+					<div class="col-lg-3"></div>
+					<div class="col-lg-6 bg-white" >
 						<div class="form d-flex align-items-center">
 							<div class="content">
 								<form action="UpdatePwdServlet" method="post" class="form-validate">
 									<div class="form-group">
-										<input id="login-username" type="text" name="loginUsername"
+										请输入用户名：<input id="login-username" type="text" name="loginUsername"
 											required data-msg="Please enter your username"
-											class="input-material" > <label for="login-username"
-											class="label-material">User Name</label>
+											class="input-material">
 									</div>
 									<div class="form-group">
-										<input id="login-password" type="password"
-											name="loginPassword" required
-											data-msg="Please enter your password" class="input-material">
-										<label for="login-password" class="label-material">Password</label>
+										请输入密码: <input id="login-password" type="password"
+											name="loginPassword" required data-msg="Please enter your password"
+											   class="input-material">
 									</div>
 									<div class="form-group">
-										<input id="login-password" type="password"
-											name="loginPassword1" required
-											data-msg="Please enter your password" class="input-material">
-										<label for="login-password" class="label-material">Password</label>
+										请再次输入密码:<input id="login-password1" type="password"
+											name="loginPassword1" required data-msg="Please enter your password" class="input-material">
 									</div>
-									<button class="btn btn-primary">确认</button><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+									<button class="btn btn-primary" style="margin-left: 200px
+">确认</button><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 								</form>
 								
 							</div>

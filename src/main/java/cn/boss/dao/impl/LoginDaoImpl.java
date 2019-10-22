@@ -8,9 +8,10 @@ import cn.boss.dao.BaseDao;
 import cn.boss.dao.ILoginDao;
 import cn.boss.pojo.Code;
 
+import javax.naming.NamingException;
+
 public class LoginDaoImpl implements ILoginDao{
 
-	@Override
 	public Code getLogin(String username, String userpwd) {
 		String sql = "select co_id,co_number,co_pwd from code where co_number=? and co_pwd=?";
 		PreparedStatement pstat = null;

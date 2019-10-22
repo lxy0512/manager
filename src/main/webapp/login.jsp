@@ -42,9 +42,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="info d-flex align-items-center">
 							<div class="content">
 								<div class="logo">
-									<h1>ONE MALL</h1>
+									<p>ONE MALL</p>
 								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <h1>万摩购物中心</h1>
 							</div>
 						</div>
 					</div>
@@ -54,39 +54,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="content">
 								<form action="LoginServlet" method="post" class="form-validate">
 									<div class="form-group">
-										<input id="login-username" type="text" name="loginUsername"
-											required data-msg="Please enter your username"
-											class="input-material" value="${cookie.loginUsername.getValue()}"> <label for="login-username"
-											class="label-material">User Name</label>
+										<input id="login-username" type="text" name="loginUsername" required data-msg="Please enter your username" class="input-material" value="${cookie.loginUsername.getValue()==null?"请输入用户名":cookie.loginUsername.getValue()}">
 									</div>
 									<div class="form-group">
-										<input id="login-password" type="password"
-											name="loginPassword" required
-											data-msg="Please enter your password" class="input-material" value="${cookie.loginPassword.getValue()}">
-										<label for="login-password" class="label-material">Password</label>
+										<input id="login-password" type="password" required data-msg="Please enter your password" name="loginPassword" class="input-material" value="${cookie.loginPassword.getValue()==null?"请输入密码":cookie.loginPassword.getValue()}">
 									</div>
 									<input type="checkbox"  value="login" name="ch">自动登录<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    								<input type="checkbox" value="pwd" name="ch"  checked=${cookie.chooes}>记住密码<br><br>
+    								<input type="checkbox" value="pwd" name="ch"  ${cookie.chooes}>记住密码<br><br>
 									<button class="btn btn-primary">Login</button><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 									<a href="update.jsp" class="forgot-pass">忘记密码</a>
 									<!-- This should be submit button but I replaced it with <a> for demo purposes-->
 								</form>
-								
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="copyrights text-center">
-			<p>
-				Design by <a href="#" class="external">Bootstrapious</a>
-				<!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
-			</p>
-		</div>
 	</div>
-	 <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
-
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
 	<script type="text/javascript" src="static/vendor/popper.js/umd/popper.min.js"></script>
 	<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="static/vendor/jquery.cookie/jquery.cookie.js"></script>

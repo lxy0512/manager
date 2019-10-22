@@ -10,9 +10,10 @@ import cn.boss.dao.BaseDao;
 import cn.boss.dao.IRepairDao;
 import cn.boss.pojo.Repair;
 
+import javax.naming.NamingException;
+
 public class RepairDaoImpl implements IRepairDao{
 
-	@Override
 	public List<Repair> listRepair(int index, int pageSize) {
 		String sql = "select ri_id,ri_name,l_floor,rs_state,si_name,ri_time,rt_type,ri_describe from repair,location,repair_state,repair_type,store WHERE ri_floor=l_id AND ri_state=rs_id AND ri_type=rt_id AND ri_store=si_id limit ?,?;";
 		PreparedStatement pstat = null;
@@ -43,7 +44,6 @@ public class RepairDaoImpl implements IRepairDao{
 		return rlist;
 	}
 
-	@Override
 	public int saveRepair(Repair r) {
 		PreparedStatement pstat = null;
 		int count = -1;
@@ -68,7 +68,6 @@ public class RepairDaoImpl implements IRepairDao{
 		return count;
 	}
 
-	@Override
 	public int updateRepair(int id, String state) {
 		PreparedStatement pstat = null;
 		int count = -1;
@@ -86,7 +85,6 @@ public class RepairDaoImpl implements IRepairDao{
 		return count;
 	}
 
-	@Override
 	public int getTotalCount() {
 		ResultSet rs = null;
 		int count = -1;

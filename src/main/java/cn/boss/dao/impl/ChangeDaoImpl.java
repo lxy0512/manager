@@ -6,9 +6,10 @@ import java.sql.SQLException;
 import cn.boss.dao.BaseDao;
 import cn.boss.dao.IChangeDao;
 
+import javax.naming.NamingException;
+
 public class ChangeDaoImpl implements IChangeDao {
 
-	@Override
 	public int changPwd(String password, String username) {
 		String sql = "update code set co_pwd = ? where co_number = ? ";
 		PreparedStatement pstat = null;

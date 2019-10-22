@@ -11,9 +11,10 @@ import cn.boss.dao.BaseDao;
 import cn.boss.dao.IActivityDao;
 import cn.boss.pojo.Host;
 
+import javax.naming.NamingException;
+
 public class ActivityDaoImpl implements IActivityDao {
 
-	@Override
 	public List<Host> listActivity() {
 		String sql = "select * from host left join activity_state on h_type = as_id left join genre on h_state = g_id";
 		PreparedStatement pstat = null;
@@ -38,7 +39,6 @@ public class ActivityDaoImpl implements IActivityDao {
 		return h;
 	}
 
-	@Override
 	public List<Host> listActivityNow(String type, Date starttime) {
 		String sql = "select * from host left join activity_state on as_id = h_state where h_time = ? and h_type = ?";
 		PreparedStatement pstat = null;
@@ -64,7 +64,6 @@ public class ActivityDaoImpl implements IActivityDao {
 		return list;
 	}
 
-	@Override
 	public int saveActivit(List<Host> activitInfo) {
 		String fi = "select g_id from genre where g_genre = activitInfo.get(2).getH_type()";
 		String di = "select as_id from activity_state where as_state = activitInfo.get(3).getH_state()";

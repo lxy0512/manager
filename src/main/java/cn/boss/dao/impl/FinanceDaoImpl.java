@@ -12,8 +12,10 @@ import cn.boss.dao.IFinanceDao;
 import cn.boss.pojo.Activity;
 import cn.boss.pojo.Finance;
 
+import javax.naming.NamingException;
+
 public class FinanceDaoImpl implements IFinanceDao{
-	@Override
+
 	public int insertFinanceAll(int id ,double income , double expend , double netincome , String direction , Date date) {
 		int count = -1;
 		PreparedStatement psta = null;
@@ -29,13 +31,13 @@ public class FinanceDaoImpl implements IFinanceDao{
 			count = psta.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally{
+		} finally{
 			BaseDao.closeAll(null, psta);
 		}
 
 		return count;
 	}
-	@Override
+
 	public List<Finance> listFinanceAll() {
 		PreparedStatement psta = null;
 		ResultSet rs = null;
@@ -55,12 +57,12 @@ public class FinanceDaoImpl implements IFinanceDao{
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally{
+		}  finally{
 			BaseDao.closeAll(rs, psta);
 		}	
 		return list;
 	}
-	@Override
+
 	public List<Activity> listActivityF(Date date) {
 		PreparedStatement psta = null;
 		ResultSet rs = null;
@@ -104,7 +106,7 @@ public class FinanceDaoImpl implements IFinanceDao{
 		}
 		return count;
 	}
-	@Override
+
 	public List<Activity> listFinanceADepartment(String department,int num1,int num2) {
 		PreparedStatement psta = null;
 		ResultSet rs = null;
@@ -129,12 +131,12 @@ public class FinanceDaoImpl implements IFinanceDao{
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally{
+		}  finally{
 			BaseDao.closeAll(rs, psta);
 		}
 		return list;
 	}
-	@Override
+
 	public int listFinanceADepartmentNum(String department){
 		PreparedStatement psta = null;
 		ResultSet rs = null;
@@ -153,7 +155,7 @@ public class FinanceDaoImpl implements IFinanceDao{
 		}
 		return count;
 	}
-	@Override
+
 	public List<Finance> listFinance(Date startdate,Date enddate) {
 		PreparedStatement psta = null;
 		ResultSet rs = null;
@@ -176,12 +178,12 @@ public class FinanceDaoImpl implements IFinanceDao{
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally{
+		}  finally{
 			BaseDao.closeAll(rs, psta);
 		}
 		return list;
 	}
-	@Override
+
 	public List<Finance> listFinance2(Date startdate,Date enddate) {
 		PreparedStatement psta = null;
 		ResultSet rs = null;
@@ -209,7 +211,7 @@ public class FinanceDaoImpl implements IFinanceDao{
 		}
 		return list;
 	}
-	@Override
+
 	public List<Finance> listFinance3(Date startdate,Date enddate) {
 		PreparedStatement psta = null;
 		ResultSet rs = null;
@@ -237,7 +239,7 @@ public class FinanceDaoImpl implements IFinanceDao{
 		}
 		return list;
 	}
-	@Override
+
 	public int saveActivity(int id,int name, Date time,int type,double money,String number,int department){
 		PreparedStatement psta = null;
 		ResultSet rs = null;
@@ -255,12 +257,12 @@ public class FinanceDaoImpl implements IFinanceDao{
 			count = psta.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally{
+		}  finally{
 			BaseDao.closeAll(rs, psta);
 		}
 		return count;
 	}
-	@Override
+
 	public int getNameId(String name) {
 		PreparedStatement psta = null;
 		ResultSet rs = null;
@@ -275,12 +277,12 @@ public class FinanceDaoImpl implements IFinanceDao{
 			id = rs.getInt("si_id");
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally{
+		} finally{
 			BaseDao.closeAll(rs, psta);
 		}
 		return id;
 	}
-	@Override
+
 	public int getTypeId(String type) {
 		PreparedStatement psta = null;
 		ResultSet rs = null;
@@ -295,7 +297,7 @@ public class FinanceDaoImpl implements IFinanceDao{
 			id = rs.getInt("sp_id");
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally{
+		}  finally{
 			BaseDao.closeAll(rs, psta);
 		}
 		return id;
@@ -313,7 +315,7 @@ public class FinanceDaoImpl implements IFinanceDao{
 			id = rs.getInt("sd_id");
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally{
+		} finally{
 			BaseDao.closeAll(rs, psta);
 		}
 		return id;

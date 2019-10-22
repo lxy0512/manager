@@ -10,9 +10,10 @@ import cn.boss.dao.BaseDao;
 import cn.boss.dao.IStoreDao;
 import cn.boss.pojo.Store;
 
+import javax.naming.NamingException;
+
 public class StoreDaoImpl implements IStoreDao {
 
-	@Override
 	public List<Store> listStore() {
 		String sql = "select si_id,si_name,l_floor,sn_state,sp_name,ai_name from store,location,store_info,store_shop,adminstrator_info where si_principal=ai_id and si_location=l_id and si_state=sn_id and si_shop=sp_id;";
 		ResultSet rs= null;
@@ -31,13 +32,12 @@ public class StoreDaoImpl implements IStoreDao {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally{
+		}  finally{
 			BaseDao.closeAll(rs, null);
 		}
 		return rlist;
 	}
 
-	@Override
 	public int updateStore(int id, String name) {
 		PreparedStatement pstat = null;
 		int count = -1;
@@ -72,7 +72,6 @@ public class StoreDaoImpl implements IStoreDao {
 		return count;
 	}
 */
-	@Override
 	public int saveStore(Store s) {
 		PreparedStatement pstat = null;
 		int count = -1;

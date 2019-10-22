@@ -7,9 +7,10 @@ import cn.boss.pojo.Employee_Info;
 import cn.boss.service.IEmployeeService;
 import cn.boss.util.Page;
 
+import javax.sound.midi.Soundbank;
+
 public class EmployeeServiceImpl implements IEmployeeService {
 
-	@Override
 	public int saveEmployee(Employee_Info ei) {
 		if(ei.getEa_sex().equals("ÄÐ")){
 			ei.setEy_sex(1);
@@ -36,7 +37,6 @@ public class EmployeeServiceImpl implements IEmployeeService {
 		return 0;
 	}
 
-	@Override
 	public int updateEmployee(int id, String state) {
 		EmployeeDaoImpl rdi = new EmployeeDaoImpl();
 		int count = rdi.updateEmployee(id, state);
@@ -46,7 +46,6 @@ public class EmployeeServiceImpl implements IEmployeeService {
 		return 0;
 	}
 
-	@Override
 	public int removeEmployee(int id) {
 		EmployeeDaoImpl rdi = new EmployeeDaoImpl();
 		int count = rdi.removeEmployee(id);
@@ -56,13 +55,11 @@ public class EmployeeServiceImpl implements IEmployeeService {
 		return 0;
 	}
 
-	@Override
 	public Page getPage(String state, int index, int pageSize) {
 		Page p = new Page();
 		p.setPageSize(pageSize);
 		EmployeeDaoImpl rdi = new EmployeeDaoImpl();
 		p.setTotalCount(rdi.getTotalCount(state));
-		System.out.println(p.getTotalCount());
 		if (p.getPageCount() == 0) {
 			p.setIndex(1);
 		}else if (index > p.getPageCount()) {
@@ -76,7 +73,6 @@ public class EmployeeServiceImpl implements IEmployeeService {
 		return p;
 	}
 
-	@Override
 	public Employee_Info listSomeEmployee(int id) {
 		EmployeeDaoImpl rdi = new EmployeeDaoImpl();
 		Employee_Info ei = rdi.listSomeEmployee(id);

@@ -50,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <!-- Navbar Header-->
             <div class="navbar-header">
               <!-- Navbar Brand -->
-              <div href="index.jsp class="navbar-brand d-none d-sm-inline-block">
+              <div href="index.jsp" class="navbar-brand d-none d-sm-inline-block">
                 <div class="brand-text d-none d-lg-inline-block"><span>ONE MALL</span> <strong>万摩购物中心</strong></div>
                 <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>ONE MALL</strong></div>
               </div>

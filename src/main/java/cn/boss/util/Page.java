@@ -7,11 +7,11 @@ import cn.boss.pojo.Employee_Info;
 import cn.boss.pojo.Repair;
 
 public class Page {
-	private Integer totalCount; 
-	private Integer pageCount;
-	private Integer pageSize;
-	private Integer index;
-	private List<Employee_Info> list = new ArrayList<Employee_Info>();
+	private Integer totalCount; //总记录数
+	private Integer pageCount;//总页数
+	private Integer pageSize;//每页显示的条数
+	private Integer index;//当前页码
+	private List<Employee_Info> list = new ArrayList<Employee_Info>();//每页要显示的数据
 	private List<Repair> rlist = new ArrayList<Repair>();
 	public List<Repair> getRlist() {
 		return rlist;

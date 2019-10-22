@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/boss/dao/BaseDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/boss/dao/IActivityDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/boss/dao/IChangeDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/boss/dao/IEmployeeDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/boss/dao/impl/EmployeeDaoImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/boss/dao/impl/StoreDaoImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/boss/dao/impl/SybaseDaoImpl.java" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

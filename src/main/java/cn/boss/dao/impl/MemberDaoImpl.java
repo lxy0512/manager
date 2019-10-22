@@ -10,6 +10,8 @@ import cn.boss.dao.BaseDao;
 import cn.boss.dao.IMemberDao;
 import cn.boss.pojo.Message;
 
+import javax.naming.NamingException;
+
 public class MemberDaoImpl implements IMemberDao {
 
 	public int saveVip(Message info) {
@@ -27,7 +29,7 @@ public class MemberDaoImpl implements IMemberDao {
 			count = sta.executeUpdate();
 		} catch (SQLException e) {
 			
-		} finally{
+		}  finally{
 			BaseDao.closeAll(null, sta);
 		}
 		return count;

@@ -11,10 +11,11 @@ import cn.boss.dao.BaseDao;
 import cn.boss.dao.ISybaseDao;
 import cn.boss.pojo.Employee_Info;
 
+import javax.naming.NamingException;
+
 
 public class SybaseDaoImpl implements ISybaseDao{
 
-	@Override
 	public int getTotalCount(int state) {
 		PreparedStatement pstat = null;
 		ResultSet rs = null;
@@ -34,9 +35,9 @@ public class SybaseDaoImpl implements ISybaseDao{
 		return count;
 	}
 
-	@Override
 	public List<Employee_Info> getPageInfo(int index, int pageSize, int state) {
 		Connection conn = BaseDao.getConn();
+
 		PreparedStatement pstat = null;
 		ResultSet rs = null;
 		List<Employee_Info> list = new ArrayList<Employee_Info>();

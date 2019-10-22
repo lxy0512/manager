@@ -11,9 +11,10 @@ import cn.boss.dao.BaseDao;
 import cn.boss.dao.IProcurementDao;
 import cn.boss.pojo.Storage;
 
+import javax.naming.NamingException;
+
 public class ProcurementDaoImpl implements IProcurementDao {
 
-	@Override
 	public int saveBuy(List<Storage> info) {
 		String lb = "select es_type from storage LEFT JOIN store_shop on sp_id = es_type";
 		String bm = "select es_department from storage LEFT JOIN storage_department on sd_id = es_department";
@@ -50,7 +51,6 @@ public class ProcurementDaoImpl implements IProcurementDao {
 		return conn;
 	}
 
-	@Override
 	public List<Storage> listBuyAll() {
 		String sql = "select * from storage LEFT JOIN storage_department on sd_id = es_department LEFT JOIN store_shop on sp_id = es_type LEFT JOIN storage_state on ss_id = es_state";
 		PreparedStatement pstat = null;
@@ -77,7 +77,6 @@ public class ProcurementDaoImpl implements IProcurementDao {
 		return l;
 	}
 
-	@Override
 	public List<Storage> listBuyDays(Date time) {
 
 		return null;

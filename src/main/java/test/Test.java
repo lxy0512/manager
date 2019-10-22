@@ -1,6 +1,7 @@
 package test;
 
 import java.sql.Date;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -14,8 +15,10 @@ import cn.boss.pojo.Store;
 import cn.boss.service.impl.EmployeeServiceImpl;
 import cn.boss.service.impl.StoreServiceImpl;
 
+import javax.naming.NamingException;
+
 public class Test {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException, NamingException {
 		BaseDao.getConn();
 		System.out.println(1);
 		EmployeeServiceImpl esi = new EmployeeServiceImpl();

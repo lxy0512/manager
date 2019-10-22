@@ -9,14 +9,14 @@ import java.util.List;
 import cn.boss.dao.BaseDao;
 import cn.boss.dao.IEmployeeDao;
 import cn.boss.pojo.Employee_Info;
+
 /**
  * 
  * @author lxy
  *
  */
-public class EmployeeDaoImpl implements IEmployeeDao{
+public class EmployeeDaoImpl implements IEmployeeDao {
 
-	@Override
 	public List<Employee_Info> listSomeEmployee(String state, int index, int pageSize) {
 		PreparedStatement pstat = null;
 		ResultSet rs = null;
@@ -28,7 +28,7 @@ public class EmployeeDaoImpl implements IEmployeeDao{
 			pstat.setInt(2, (index-1) * pageSize);
 			pstat.setInt(3, pageSize);
 			rs = pstat.executeQuery();
-			while (rs.next()) {
+			while (rs.next()){
 				Employee_Info e = new Employee_Info();
 				e.setEy_id(rs.getInt("ey_id"));
 				e.setEy_name(rs.getString("ey_name"));
@@ -48,8 +48,8 @@ public class EmployeeDaoImpl implements IEmployeeDao{
 		}
 		return infos;
 	}
-	
-	@Override
+
+
 	public Employee_Info listSomeEmployee(int id) {
 		PreparedStatement pstat = null;
 		ResultSet rs = null;
@@ -79,7 +79,6 @@ public class EmployeeDaoImpl implements IEmployeeDao{
 		return ei;
 	}
 
-	@Override
 	public int saveEmployee(Employee_Info ei) {
 		PreparedStatement pstat = null;
 		int count = -1;
@@ -99,7 +98,7 @@ public class EmployeeDaoImpl implements IEmployeeDao{
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
+		}  finally {
 			BaseDao.closeAll(null, pstat);
 		}
 		return count;
@@ -116,13 +115,12 @@ public class EmployeeDaoImpl implements IEmployeeDao{
 			count = pstat.executeUpdate();	
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
+		}  finally {
 			BaseDao.closeAll(null, pstat);
 		}
 		return count;
 	}
 
-	@Override
 	public int removeEmployee(int id) {
 		PreparedStatement pstat = null;
 		int count = -1;
@@ -139,7 +137,7 @@ public class EmployeeDaoImpl implements IEmployeeDao{
 		return count;
 	}
 
-	@Override
+
 	public int getTotalCount(String state) {
 		PreparedStatement pstat = null;
 		ResultSet rs = null;
@@ -153,7 +151,7 @@ public class EmployeeDaoImpl implements IEmployeeDao{
 			count = rs.getInt(1);
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
+		}  finally {
 			BaseDao.closeAll(rs, null);
 		}
 		return count;

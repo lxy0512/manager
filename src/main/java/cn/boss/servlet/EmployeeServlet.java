@@ -2,7 +2,6 @@ package cn.boss.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,23 +21,11 @@ public class EmployeeServlet extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
 		request.setCharacterEncoding("utf-8");
-		EmployeeServiceImpl esi = new EmployeeServiceImpl();
-		String pindex = request.getParameter("index");
-		int index = 1;
-		if(pindex != null && pindex != ""){
-			index = Integer.parseInt(pindex);
-		}
-		Page formalPage = esi.getPage("正式合同",index, 3);
-		String ppg = request.getParameter("pg");
-		int pg = 1;
-		if(ppg != null && ppg != ""){
-			pg = Integer.parseInt(ppg);
-		}
-		Page probationPage = esi.getPage("临时合同",pg, 3);
-		request.setAttribute("formalPage", formalPage);
-		request.setAttribute("probationPage", probationPage);
-		request.getRequestDispatcher("personalinfo.jsp").forward(request, response);
-		
+		PrintWriter out = response.getWriter();
+		JSONObject jo = new JSONObject();
+		jo.put("info","成功了");
+		out.print(jo);
+
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
